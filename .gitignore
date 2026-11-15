@@ -37,3 +37,10 @@ Thumbs.db
 
 # Accidental nested repository clone
 /sistem-analisis-kompetensi/
+
+# Local Postman workspace metadata
+/.postman/
+/postman/
+
+# Temporary test output
+/test-output.txt
