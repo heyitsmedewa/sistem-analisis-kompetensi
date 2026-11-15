@@ -1,0 +1,36 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# Temporary backup files
+*.bak
+
+# Local testing and troubleshooting scripts
+/insert-matching-details.php
+/seed_matching_test.php
+/seed_matching_test_2.php
+/test-ssl.php
+
+# Local migration dump
+/database_migrations.txt
