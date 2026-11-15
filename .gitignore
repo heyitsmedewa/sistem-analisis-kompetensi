@@ -34,3 +34,6 @@ Thumbs.db
 
 # Local migration dump
 /database_migrations.txt
+
+# Accidental nested repository clone
+/sistem-analisis-kompetensi/

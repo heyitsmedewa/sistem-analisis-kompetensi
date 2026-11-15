@@ -1,58 +1,206 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Analisis Kesesuaian Kompetensi Mahasiswa terhadap Lowongan Kerja
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi berbasis web untuk menganalisis kesesuaian kompetensi mahasiswa terhadap persyaratan lowongan kerja menggunakan metode **Profile Matching** dan dukungan **Artificial Intelligence (AI)**.
 
-## About Laravel
+Aplikasi membantu mahasiswa mengelola profil kompetensi, mengunggah CV, memperoleh hasil pencocokan lowongan, serta mendapatkan rekomendasi pengembangan kompetensi.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fitur Aplikasi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Mahasiswa
+- Registrasi dan login.
+- Dashboard dan pengelolaan profil mahasiswa.
+- Upload dan pengelolaan CV.
+- Ekstraksi informasi CV menggunakan AI.
+- Konfirmasi dan penyimpanan hasil ekstraksi CV.
+- Pengelolaan kompetensi mahasiswa.
+- Pencocokan kompetensi dengan persyaratan lowongan kerja menggunakan Profile Matching.
+- Perhitungan pencocokan seluruh lowongan aktif.
+- Peringkat kesesuaian lowongan kerja.
+- Rekomendasi pengembangan kompetensi menggunakan AI.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Admin
+- Dashboard admin.
+- Pengelolaan data lowongan kerja.
+- Pengelolaan kompetensi persyaratan lowongan.
+- Verifikasi kompetensi mahasiswa.
+- Persetujuan dan penolakan pengajuan kompetensi.
+- Riwayat verifikasi kompetensi.
 
-## Learning Laravel
+## Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Teknologi | Keterangan |
+|---|---|
+| PHP 8.3+ | Bahasa pemrograman backend |
+| Laravel 13 | Framework aplikasi web |
+| MySQL | Database relasional |
+| Tailwind CSS 4 | Styling antarmuka |
+| Vite 7 | Frontend build tool |
+| JavaScript | Interaksi frontend |
+| Groq API | Layanan AI untuk ekstraksi CV dan rekomendasi |
+| PHPWord | Pengolahan dokumen Word |
+| Smalot PDF Parser | Pembacaan dokumen PDF |
+| PHPUnit 12 | Pengujian otomatis |
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Persyaratan Sistem
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Pastikan perangkat telah memiliki:
+- PHP 8.3 atau lebih baru.
+- Composer.
+- MySQL.
+- Node.js dan npm.
+- Git.
 
-## Agentic Development
+## Instalasi dan Konfigurasi
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 1. Clone Repository
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/heyitsmedewa/sistem-analisis-kompetensi.git
+cd sistem-analisis-kompetensi
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Instal Dependensi Backend
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Instal Dependensi Frontend
 
-## Code of Conduct
+```bash
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Siapkan File Environment
 
-## Security Vulnerabilities
+Untuk Windows PowerShell:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```powershell
+Copy-Item .env.example .env
+```
 
-## License
+### 5. Buat Application Key
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+```
+
+### 6. Konfigurasi Database
+
+Buat database MySQL dengan nama `skripsi_kompetensi`.
+
+Sesuaikan konfigurasi pada file `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=skripsi_kompetensi
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Sesuaikan username dan password dengan konfigurasi MySQL masing-masing.
+
+### 7. Konfigurasi Layanan AI
+
+Aplikasi menggunakan Groq API untuk proses ekstraksi CV dan pembuatan rekomendasi AI.
+
+Tambahkan konfigurasi berikut pada file `.env`:
+
+```env
+GROQ_API_KEY=
+GROQ_MODEL=
+```
+
+Isi dengan API key dan nama model Groq yang tersedia. Jangan mengunggah API key ke repository publik.
+
+### 8. Jalankan Migrasi dan Seeder
+
+```bash
+php artisan migrate --seed
+```
+
+Seeder menyiapkan:
+- Role `admin` dan `mahasiswa`.
+- Data kompetensi.
+- Data sinonim kompetensi.
+
+Seeder tidak membuat akun pengguna demo secara otomatis.
+
+### 9. Build Frontend
+
+```bash
+npm run build
+```
+
+### 10. Jalankan Aplikasi
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi melalui:
+
+`http://127.0.0.1:8000`
+
+## Pengujian
+
+Untuk menjalankan seluruh pengujian otomatis:
+
+```bash
+php artisan test
+```
+
+Pengujian menggunakan konfigurasi testing pada `phpunit.xml`, termasuk database SQLite in-memory.
+
+## Struktur Direktori
+
+```text
+app/
+├── Http/
+│   └── Controllers/
+├── Models/
+└── Services/
+
+config/
+database/
+├── migrations/
+├── factories/
+└── seeders/
+
+resources/
+├── css/
+├── js/
+└── views/
+
+routes/
+└── web.php
+
+tests/
+├── Feature/
+└── Unit/
+```
+
+## Role Pengguna
+
+| Role | Hak Akses |
+|---|---|
+| Admin | Mengelola lowongan kerja, kompetensi persyaratan, dan verifikasi kompetensi mahasiswa |
+| Mahasiswa | Mengelola profil, CV, kompetensi, pencocokan lowongan, dan rekomendasi AI |
+
+## Catatan Keamanan
+
+- Jangan mengunggah file `.env` ke repository.
+- Jangan menyimpan API key atau kredensial database dalam source code.
+- Gunakan konfigurasi environment yang sesuai dengan server deployment.
+- Untuk lingkungan produksi, gunakan `APP_DEBUG=false`.
+- Gunakan kredensial database yang aman.
+
+## Repository
+
+[GitHub - Sistem Analisis Kompetensi](https://github.com/heyitsmedewa/sistem-analisis-kompetensi)
+
+## Lisensi
+
+Proyek ini dikembangkan sebagai aplikasi tugas dan penelitian akademik.
